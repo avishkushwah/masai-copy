@@ -417,7 +417,170 @@ marquee>img {
     background-color: rgb(237, 3, 49, 0.4);
 }
 
+/* SCHOLARSHIP */
 
+.scholarship{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.scholarship_main{
+    width: 95%;
+    padding-bottom: 10px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: rgb(255, 173, 188, 0.3);
+
+}
+
+.scholarship_head{
+    width: 50%;
+    margin: 50px auto 0px auto;
+    padding: 40px 0px 40px 0px;
+    text-align: center;
+    
+}
+
+.scholarship_head h1{
+    font-size: 55px;
+    letter-spacing: 1px;
+    font-family: 'East Sea Dokdo', cursive;
+
+}
+
+
+.scholarship_contain{
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+}
+
+.scholarship_contain>p:nth-child(1){
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.scholarship_contain>p:nth-child(2){
+    text-align: center;
+    margin: 5px;
+    color: #186294;
+    font-size: 18px;
+}
+
+.scholarship_contain>p:nth-child(4){
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.scholarship_contain>button{
+    display: block;
+    align-items: center;
+    border: 2px solid #ED0331;
+    margin: 20px auto;
+    font-size: 21px;
+    line-height: 30px;
+    
+    border-radius: 10px;
+    color: #ED0331;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+.scholarship_contain>button:hover{
+    background-color: rgb(237, 3, 49, .1);
+}
+
+.scholarship_contain>button>a{
+    color: #ED0331;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Instructors */
+.Instructors{
+    width: 100%;
+}
+.Instructors_main{
+    width: 95%;
+    margin: 50px auto;
+    
+}
+.Instructors_head>h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.Instructors_head>h4{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.list_instructors{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+#instructors_item{
+    overflow: hidden;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#instructors_item>img{
+    width: 100%;
+}
+
+#instructors_item>h2{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#instructors_item>h4{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: rgb(99, 98, 98);
+    margin-top: 5px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid grey;
+}
+
+#instructors_item>img:nth-child(4){
+    width: 60%;
+    margin: 2% 20% ;
+}
+
+
+.instructors_more{
+    display: block;
+    margin: 20px auto;
+    width: 190px;
+}
+
+.instructors_more>button{
+    background-color: #ED0331;
+    line-height: 25px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 22px;
+    border-radius: 10px;
+
+}
+.instructors_more>button>a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 
 /* For Table Screen */
@@ -454,6 +617,11 @@ marquee>img {
 }
 
 @media screen and (max-width:500px){
+    .header_main{
+        width: 80%;
+        margin: auto;
+    }
+    
     .menu{
         width: 100%;
         max-height: 0;
@@ -515,13 +683,14 @@ marquee>img {
 
     marquee {
         gap: 20px;
+        
         display: flex;
     }
 
 
     marquee>img {
-        width: 100px;
-        margin: 0px 30px;
+        width: 200px;
+        margin: -20px 30px;
     
     }
 
@@ -608,6 +777,35 @@ marquee>img {
         font-weight: 500;
         
     }
+
+    /* scholarship */
     
-    
+    .scholarship_head{
+        width: 90%;
+        
+    }
+
+    .scholarship_head img{
+        width: 80%;
+    }
+
+    .scholarship_head h1{
+        font-size: 35px;
+    }
+    .scholarship_contain>p:nth-child(1){
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .scholarship_contain>p:nth-child(4){
+        font-size: 14px;
+    }
+    /* Instructors */
+    .list_instructors{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
