@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai-Login</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6bad7570e0.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+
+        
+
+        .login{
+            width: 60%;
+            margin: auto;
+        }
+
+        .logo img{
+            width: 200px;
+            margin: auto;
+            display: block;
+        }
+
+        .login_head{
+            text-align: center;
+            font-size: 25px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+        .log_contain{
+            width: 60%;
+            margin: auto;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+            padding: 30px 0px;
+        }
+
+        form{
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        label{
+            font-size: 22px;
+            margin-top: 30px;
+            letter-spacing: 1px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        input{
+            width: 90%;
+            padding: 5px 10px;
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        .login_btn{
+            width: 95%;
+            margin: 30px auto;
+            line-height: 35px;
+            color: white;
+            font-weight: 600;
+            font-family: 'Aboreto', cursive;
+            background-color: #ED0331;
+        }
+
+        .login_btn:hover{
+            background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+        }
+
+        .or{
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+        .or hr{
+            width: 90%;
+            height: 1px;
+            margin-top: 12px;
+        }
+
+        .register_btn{
+            width: 50%;
+            margin: auto;
+            display: block;
+            padding: 10px 5px;
+            font-size: 20px;
+            background-image: linear-gradient(to right, #00b09b, #96c93d);
+            border-radius: 10px;
+            border: .2px solid black;
+            transition: 2s;
+        }
+
+        .register_btn:hover{
+            background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+            transition: 2s;
+        }
+
+        .register_btn a{
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+
+        .more_options{
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            gap: 30px;
+        }
+        .more_options button{
+            width: 100%;
+            padding: 10px 2px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        #google{
+            background-image: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+        }
+
+        #facebook{
+            background-image: linear-gradient(120deg, #021b79, #0575e6, rgba(105, 90, 129, 0.933));
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="login">
+        <div class="logo">
+            <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
+        </div>
+
+
+        <div class="log_contain">
+
+        <div class="login_head">
+            <h1>LOGIN</h1>
+        </div>
+        <form>
+             <label>Email Address</label> <br>
+             <input type="email" placeholder="ENTER EMAIL" id="email"> <br>
+             <label>Password</label> <br>
+             <input type="password" placeholder="ENTER PASSWORD" id="password"> <br>
+             <input type="submit" value="LOGIN"  class="login_btn">
+             
+        </form>
+
+        <div class="or">
+            <hr><h3>OR</h3> <hr>
+        </div>
+
+        <button class="register_btn"><a href="sing.html">REGISTER</a></button>
+        <div class="more_options">
+            <button id="google"><i class="fa-brands fa-google"></i>Google</button>
+            <button id="facebook"><i class="fa-brands fa-facebook"></i> facebook</button>
+        </div>
+        </div>
+
+        
+
+
+    </section>
+</body>
+<script>
+    let form = document.querySelector("form");
+
+    let signupLS= JSON.parse(localStorage.getItem("signup")) || [];
+
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        if(signupLS.length ===0){
+            alert("No user Exist");
+            return;
+        } 
+
+        let obj={
+            email:form.email.value,
+            password:form.password.value,
+        }
+
+        let islogin=false;
+        signupLS.forEach(function(ele){
+            if(ele.email===obj.email && ele.password===obj.password){
+                islogin=true;
+                localStorage.setItem("login", JSON.stringify(ele));
+                alert("Succesfully Login");
+                window.location.href="rigister.html";
+            }
+        });
+
+       if(islogin===false){
+        alert("not succesfull");
+       }
+    })
+</script>
+</html>
